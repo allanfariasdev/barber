@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#101010"><title>BRAVO — Sua próxima versão</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2" defer></script>
+  <script src="config.js" defer></script><script src="script.js" defer></script>
+</head>
+<body>
+<header class="topbar"><a class="brand" href="index.html">BRAVO<span>BARBEARIA</span></a><nav><a href="admin.html">Painel admin</a><a class="button small" href="#agendamento">Agendar</a></nav></header>
+<main>
+ <section class="hero"><div class="hero-copy"><p class="eyebrow">CUIDADO EM CADA DETALHE</p><h1>Seu estilo.<br>Sua próxima<br><em>versão.</em></h1><p>Corte, barba e presença. Reserve seu momento em poucos toques.</p><a href="#agendamento" class="button">Escolher meu horário ↗</a><div class="hero-meta"><span>✦ Atendimento com hora marcada</span><span>✦ Sem filas</span></div></div><div class="hero-art"><img src="fotos/hero.webp" alt="Ambiente ilustrativo de uma barbearia" onerror="this.hidden=true"><span class="art-badge">ESTILO É<br>ASSINATURA.</span></div></section>
+ <section class="services-preview"><article><img class="preview-photo" src="fotos/corte.webp" alt="Exemplo fictício de corte" loading="lazy"><span>01 / CORTE</span><h2>Na medida do seu estilo.</h2><p>Do clássico ao degradê.</p></article><article><img class="preview-photo" src="fotos/barba.webp" alt="Exemplo fictício de barba" loading="lazy"><span>02 / BARBA</span><h2>O detalhe faz diferença.</h2><p>Acabamento e cuidado.</p></article><article><img class="preview-photo" src="fotos/hero.webp" alt="Ambiente fictício da barbearia" loading="lazy"><span>03 / COMPLETO</span><h2>Uma nova versão.</h2><p>Corte e barba no mesmo horário.</p></article></section>
+ <section id="agendamento" class="booking-section"><div class="section-heading"><p class="eyebrow">SEU MOMENTO, RESERVADO</p><h2>Vamos agendar?</h2><p>Uma escolha por vez. Seu horário, em quatro passos.</p></div>
+ <div class="booking-card"><div class="progress"><span id="progress-label">ETAPA 1 DE 4</span><div><i id="progress-fill"></i></div></div>
+ <div id="wizard-navigation" class="wizard-navigation"><button id="wizard-back" class="wizard-back" type="button" hidden>← Voltar</button><p id="wizard-context" class="muted"></p></div>
+ <form id="booking-form">
+  <fieldset id="step-service"><legend>01. O que vamos fazer?</legend><div id="service-cards" class="choice-grid"><p>Carregando serviços…</p></div></fieldset>
+  <fieldset id="step-barber" hidden><legend>02. Com quem?</legend><div id="barber-cards" class="choice-grid"></div></fieldset>
+  <fieldset id="step-time" hidden><legend>03. Quando fica bom?</legend><label for="booking-date">Dia</label><input id="booking-date" type="date" required disabled><p class="muted">Horários de Brasília · até 90 dias à frente</p><div id="time-slots" class="slots"></div></fieldset>
+  <fieldset id="step-customer" hidden><legend>04. Só faltam seus dados</legend><div id="booking-summary" class="summary"></div><label for="customer-name">Seu nome</label><input id="customer-name" autocomplete="name" minlength="2" maxlength="100" required disabled><label for="customer-phone">Telefone com DDD</label><input id="customer-phone" type="tel" inputmode="tel" autocomplete="tel" placeholder="(48) 99999-9999" required disabled><p class="muted">Seus dados serão usados pela barbearia para cuidar desta reserva.</p><button id="confirm-booking" class="button full" type="submit" disabled>Confirmar agendamento</button></fieldset>
+ </form><p id="booking-message" class="message" role="status" aria-live="polite"></p>
+ <div id="booking-success" hidden><span class="success-icon">✓</span><h2>Horário reservado!</h2><p id="success-details"></p><p id="reservation-code" class="muted"></p><button id="book-again" class="button full" type="button">Fazer outro agendamento</button></div>
+ </div></section>
+</main><footer><span class="brand">BRAVO<span>BARBEARIA</span></span><p>Seu estilo começa com um horário.</p><a href="admin.html">Acesso do administrador</a></footer>
+</body></html>
